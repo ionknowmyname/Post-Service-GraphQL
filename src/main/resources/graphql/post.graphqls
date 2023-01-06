@@ -1,0 +1,16 @@
+
+
+type PostEntity {
+    id: ID!
+    title: String
+    body: String
+    author: AuthorEntity!
+    createdAt: DateTime
+    updatedAt: DateTime
+}
+
+input PostRequest {
+    title: String
+    body: String
+    author: ID!
+}

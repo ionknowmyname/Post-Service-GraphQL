@@ -1,0 +1,15 @@
+
+type AuthorEntity {
+    id: ID!
+    username: String!
+    age: PositiveInt!
+    posts: [PostEntity]
+    createdAt: DateTime
+    updatedAt: DateTime
+
+}
+
+input AuthorRequest {
+    username: String
+    age: Int
+}
