@@ -1,8 +1,8 @@
 
-type Query {
-    getAllAuthors: [AuthorEntity]!
-    getAuthorById(id: String): [AuthorEntity]
-    getAllPosts: [PostEntity]!
-    getAllPostsByAuthor(authorId: ID!): [PostEntity]!
-    getPostById: PostEntity
-}
+#type Query {
+#    getAllAuthors: [AuthorEntity]!
+#    getAuthorById(id: String): [AuthorEntity]
+#    getAllPosts: [PostEntity]!
+#    getAllPostsByAuthor(authorId: ID!): [PostEntity]!
+#    getPostById: PostEntity
+#}

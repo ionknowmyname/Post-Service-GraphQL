@@ -1,7 +1,7 @@
 
-type Mutation {
-    createPost(request: PostRequest): PostEntity!
-    createAuthor(request: AuthorRequest): AuthorEntity!
-    updatePostById(id: ID!, request: PostRequest): PostEntity!
-    deletePostById(id: ID!): Boolean
-}
+#type Mutation {
+#    createPost(request: PostRequest): PostEntity!
+#    createAuthor(request: AuthorRequest): AuthorEntity!
+#    updatePostById(id: ID!, request: PostRequest): PostEntity!
+#    deletePostById(id: ID!): Boolean
+#}

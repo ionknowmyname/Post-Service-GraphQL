@@ -1,7 +1,6 @@
 package com.faithfulolaleru.PostServiceGraphQL.entity;
 
-import lombok.Data;
-import lombok.EqualsAndHashCode;
+import lombok.*;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -11,6 +10,9 @@ import java.util.List;
 @Document(collection = "authors")
 @Data
 @EqualsAndHashCode(callSuper = true)
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 public class AuthorEntity extends BaseEntity {
 
     private String username;
@@ -18,5 +20,5 @@ public class AuthorEntity extends BaseEntity {
     private int age;
 
 //    @DBRef
-//    private List<PostEntity> posts = new ArrayList<>();
+    private List<PostEntity> posts = new ArrayList<>();
 }

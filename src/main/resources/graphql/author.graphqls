@@ -1,4 +1,13 @@
 
+type Query {
+    getAllAuthors: [AuthorEntity]!
+    getAuthorById(id: ID!): AuthorEntity
+}
+
+type Mutation {
+    createAuthor(request: AuthorRequest): AuthorEntity
+}
+
 type AuthorEntity {
     id: ID!
     username: String!

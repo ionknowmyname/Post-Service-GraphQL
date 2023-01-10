@@ -1,4 +1,17 @@
 
+extend type Query {
+    getAllPosts: [PostEntity]!
+    getPostById(id: ID!): PostEntity
+    getPostByTitle(title: String!): PostEntity
+    getAllPostsByAuthor(authorId: ID!): [PostEntity]!
+
+}
+
+extend type Mutation {
+    createPost(request: PostRequest): PostEntity!
+    updatePostById(id: ID!, request: PostRequest): PostEntity!
+    deletePostById(id: ID!): Boolean
+}
 
 type PostEntity {
     id: ID!
@@ -10,7 +23,7 @@ type PostEntity {
 }
 
 input PostRequest {
-    title: String
+    title: String!
     body: String
-    author: ID!
+    authorId: ID!
 }
