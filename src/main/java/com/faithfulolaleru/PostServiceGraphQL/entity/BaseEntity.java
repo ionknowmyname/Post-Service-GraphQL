@@ -8,6 +8,7 @@ import org.springframework.data.annotation.LastModifiedDate;
 
 import java.time.Instant;
 import java.time.LocalDateTime;
+import java.time.OffsetDateTime;
 import java.util.Date;
 
 @Data
@@ -18,15 +19,15 @@ public class BaseEntity {
 
     @CreatedDate
     // @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")
-    private Instant createdAt;
+    private OffsetDateTime createdAt;
 
     @LastModifiedDate
     // @UpdateTimestamp
-    private Instant updatedAt;
+    private OffsetDateTime updatedAt;
 
 
     public BaseEntity() {
-        this.createdAt = Instant.now();
+        this.createdAt = OffsetDateTime.now();
     }
 
 }
