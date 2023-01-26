@@ -7,6 +7,7 @@ import org.springframework.data.mongodb.core.convert.MongoCustomConversions;
 
 import java.time.OffsetDateTime;
 import java.time.ZoneOffset;
+import java.util.Date;
 import java.util.List;
 
 @Configuration
@@ -16,7 +17,8 @@ public class MongoDateConfig {
     public MongoCustomConversions mongoCustomConversions() {
         return new MongoCustomConversions(List.of(
                 new OffsetDateTimeReadConverter(),
-                new OffsetDateTimeWriteConverter()
+                new OffsetDateTimeWriteConverter(),
+                new OffsetDateTimeReadConverter2()
         ));
     }
 
@@ -32,6 +34,12 @@ public class MongoDateConfig {
         @Override
         public OffsetDateTime convert(String source) {
             return OffsetDateTime.parse(source);
+        }
+    }
+    static class OffsetDateTimeReadConverter2 implements Converter<Date, OffsetDateTime> {
+        @Override
+        public OffsetDateTime convert(Date source) {
+            return source.toInstant().atOffset(ZoneOffset.UTC);
         }
     }
 }
