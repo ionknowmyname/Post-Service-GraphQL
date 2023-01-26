@@ -16,15 +16,15 @@ extend type Mutation {
 
 type PostEntity {
     id: ID!
-    title: String
-    body: String
+    title: String!
+    body: String!
     author: AuthorEntity!
-    createdAt: DateTime
+    createdAt: DateTime!
     updatedAt: DateTime
 }
 
 input PostRequest {
     title: String!
-    body: String
+    body: String!
     authorId: ID!
 }

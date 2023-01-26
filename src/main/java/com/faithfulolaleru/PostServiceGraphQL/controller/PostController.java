@@ -77,7 +77,7 @@ public class PostController {
         return postRepository.save(PostEntity.builder()
                 .title(request.getTitle() != null ? request.getTitle() : foundPost.getTitle())
                 .body(request.getBody() != null ? request.getBody() : foundPost.getBody())
-//                .author(foundAuthor)
+                .author(foundPost.getAuthor())
                 .build());
     }
 
