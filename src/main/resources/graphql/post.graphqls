@@ -1,9 +1,10 @@
 
 extend type Query {
-    getAllPosts: [PostEntity]!
+    getAllPosts: [PostEntity]
     getPostById(id: ID!): PostEntity
     getPostByTitle(title: String!): PostEntity
-    getAllPostsByAuthor(authorId: ID!): [PostEntity]!
+    getAllPostsByAuthor(authorId: ID!): [PostEntity]
+#    getAllPostsByAuthor(author: AuthorEntity!): [PostEntity]
 
 }
 

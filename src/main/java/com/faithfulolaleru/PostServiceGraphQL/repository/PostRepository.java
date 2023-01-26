@@ -9,9 +9,9 @@ import java.util.Optional;
 
 public interface PostRepository extends MongoRepository<PostEntity, String> {
 
-    Optional<PostEntity> findPostEntityByTitle(String title);
+    List<PostEntity> findAllByTitle(String title);
 
-    List<PostEntity> findAllByAuthor(String authorId);
+    List<PostEntity> findAllByAuthor(AuthorEntity author);
 
     Optional<PostEntity> findPostEntityByTitleAndAuthor(String title, AuthorEntity author);
 }

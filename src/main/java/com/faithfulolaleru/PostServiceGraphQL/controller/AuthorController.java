@@ -29,6 +29,12 @@ public class AuthorController {
         return authorRepository.findAll();
     }
 
+    @QueryMapping
+    public AuthorEntity getAuthorById(@Argument String id) {
+        return authorRepository.findById(id)
+                .orElseThrow(() -> new GeneralException("Author with id not found"));
+    }
+
     @MutationMapping
     public AuthorEntity createAuthor(@Argument AuthorRequest request) {
 
