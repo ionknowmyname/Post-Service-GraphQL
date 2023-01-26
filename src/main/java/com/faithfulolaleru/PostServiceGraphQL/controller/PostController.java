@@ -39,7 +39,7 @@ public class PostController {
     }
 
     @QueryMapping
-    public List<PostEntity> getPostByTitle(@Argument String title) {
+    public List<PostEntity> getPostsByTitle(@Argument String title) {
         return postRepository.findAllByTitle(title);
     }
 
